@@ -1,13 +1,24 @@
-# Gemini API Setup Instructions
+# LLM Fundamentals
+
+## Proejct Setup Instructions
+
+1. Clone the repo
+2. Install dependencies with `npm install`
+3. Create a `.env` file and add your Gemini API key (see below)
+4. Run the script with `node main.js`
+
+## Gemini API Setup Instructions
 
 Guide: https://ai.google.dev/gemini-api/docs/quickstart#javascript
+
 - You will need an API key which you can get for free here: https://aistudio.google.com/app/apikey?
 - Press the Create API Key button on the top right
 
 Create a `.env` file and **add the API key there**, like this:
-```GEMINI_API_KEY=your_api_key_here```
+`GEMINI_API_KEY=your_api_key_here`
 
 You can reduce token usage (hence increase your rate limit) by disabling thinking:
+
 ```
 config: {
   thinkingConfig: {
@@ -15,3 +26,15 @@ config: {
   },
 }
 ```
+
+## Tasks
+
+### 1. Simple LLM Request via API
+
+- Implement the TODOs in `main.js`
+- Run the script with `node main.js`
+- You should see "Alert the author!" printed to the console
+
+### 2. Token tracking
+
+- Add a log showing the input & output tokens used
