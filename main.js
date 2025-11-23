@@ -1,27 +1,4 @@
-import { GoogleGenAI } from "@google/genai";
-import dotenv from "dotenv"; // to read the .env file
-
-dotenv.config();
-const gemini = new GoogleGenAI({}); // initialize the Gemini client and automatically loads the API key from the .env file
-
-const askGemini = async (model, userPrompt) => {
-  try {
-    const result = await gemini.models.generateContent({
-      model,
-      contents: userPrompt,
-      config: {
-        thinkingConfig: {
-          thinkingBudget: 0,
-        },
-      },
-    });
-
-    return result;
-  } catch (error) {
-    console.error("Error generating content with LLM:", error);
-    throw error;
-  }
-};
+import { askGemini } from "./gemini-service";
 
 const isPositiveReview = (llmResult) => {
   return llmResult.toLowerCase().includes("positive"); // naive implementation - we'll improve next lesson
