@@ -38,3 +38,10 @@ config: {
 ### 2. Token tracking
 
 - Add a log showing the input & output tokens used
+
+### 3. Character Presence Analysis
+
+- Implement the TODOs in `character-presence.js`
+- Run the script with `node alice_analysis/character-presence.js`
+- Make sure you run `npm install` again so you have the `json5` dependency
+- Ensure you have the `.env` file in the root directory with your Gemini API key
