@@ -2,7 +2,7 @@ import { CHAPTER_1_TEXT } from "./alice-ch1.js";
 import { askGemini } from "../gemini-service.js";
 
 async function analyzeCharacterPresence() {
-  const model = "gemini-2.5-flash";
+  const model = "gemini-3.5-flash";
   const characters = ["alice", "rabbit", "cat", "sister"]; // for simplicity, instead of dynamically extracting characters
   const chapterText = CHAPTER_1_TEXT;
 
