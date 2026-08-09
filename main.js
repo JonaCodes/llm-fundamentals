@@ -1,9 +1,5 @@
 import { askGemini } from "./gemini-service";
 
-const isPositiveReview = (llmResult) => {
-  return llmResult.toLowerCase().includes("positive"); // naive implementation - we'll improve next lesson
-};
-
 const run = async () => {
   const model = "gemini-2.5-flash";
   const userPrompt = `
@@ -18,11 +14,7 @@ const run = async () => {
   console.log(`Output tokens: ${usageMetadata.candidatesTokenCount}`);
   console.log("\n---\n");
 
-  if (isPositiveReview(responseText)) {
-    console.log("Celebrate.");
-  } else {
-    console.log("Alert the author!");
-  }
+  console.log(responseText);
 };
 
 run();
