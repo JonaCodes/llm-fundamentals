@@ -33,7 +33,7 @@ config: {
 
 - Implement the TODOs in `main.js`
 - Run the script with `node main.js`
-- You should see "Alert the author!" printed to the console
+- You should see the LLM's response to the prompt printed to the console
 
 ### 2. Token tracking
 
