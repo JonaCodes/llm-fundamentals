@@ -8,25 +8,14 @@ const askGemini = async (userPrompt) => {
   // TODO: implement
 };
 
-const isPositiveReview = (llmResult) => {
-  // TODO: implement
-};
-
 const run = async () => {
+  // This is a prompt that would be very hard for a traditional code to answer correctly, hence the power of LLMs
   const userPrompt = `
   Is the following a positive or negative review?
   "Yeah, this was the *best* book ever, only made me want to pull my eyes out of their sockets"`;
 
   const response = await askGemini(userPrompt);
-
   console.log(response);
-  console.log("\n\n---\n\n");
-
-  if (isPositiveReview(response)) {
-    console.log("Celebrate.");
-  } else {
-    console.log("Alert the author!");
-  }
 };
 
 run();
