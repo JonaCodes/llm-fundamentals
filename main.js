@@ -1,7 +1,7 @@
-import { askGemini } from "./gemini-service";
+import { askGemini } from "./gemini-service.js";
 
 const run = async () => {
-  const model = "gemini-2.5-flash";
+  const model = "gemini-3.8-flash";
   const userPrompt = `
   Is the following a positive or negative review?
   "Yeah, this was the *best* book ever - as if."`;

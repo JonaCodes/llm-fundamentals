@@ -5,7 +5,7 @@ import { chunkBySentences, splitIntoSentences } from "./chunk-service.js";
 import { ALICE_SYSTEM_PROMPT } from "./prompts.js";
 
 async function analyzeCharacterPresence() {
-  const model = "gemini-2.5-flash";
+  const model = "gemini-3.8-flash";
   const characters = ["alice", "rabbit", "cat", "sister"];
 
   const totalScores = {
