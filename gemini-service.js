@@ -1,4 +1,4 @@
-import { GoogleGenAI, ThinkingLevel } from "@google/genai";
+import { GoogleGenAI } from "@google/genai";
 import dotenv from "dotenv"; // to read the .env file
 
 dotenv.config();
@@ -11,9 +11,6 @@ export const askGemini = async (model, userPrompt, systemPrompt) => {
       contents: userPrompt,
       config: {
         systemInstruction: systemPrompt,
-        thinkingConfig: {
-          thinkingLevel: ThinkingLevel.LOW,
-        },
       },
     });
 
