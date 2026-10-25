@@ -1,4 +1,4 @@
-import { GoogleGenAI, ThinkingLevel } from "@google/genai";
+import { GoogleGenAI } from "@google/genai";
 import dotenv from "dotenv"; // to read the .env file
 
 dotenv.config();
@@ -9,11 +9,6 @@ const askGemini = async (model, userPrompt) => {
     const result = await gemini.models.generateContent({
       model,
       contents: userPrompt,
-      config: {
-        thinkingConfig: {
-          thinkingLevel: ThinkingLevel.LOW,
-        },
-      },
     });
 
     return result;
@@ -24,7 +19,7 @@ const askGemini = async (model, userPrompt) => {
 };
 
 const run = async () => {
-  const model = "gemini-3.8-flash";
+  const model = "gemini-3.5-flash-lite";
   const userPrompt = `
   Is the following a positive or negative review?
   "Yeah, this was the *best* book ever - as if."`;
@@ -35,6 +30,8 @@ const run = async () => {
   console.log("\n---\n");
   console.log(`Input tokens: ${usageMetadata.promptTokenCount}`);
   console.log(`Output tokens: ${usageMetadata.candidatesTokenCount}`);
+  console.log(`Thinking tokens: ${usageMetadata.thoughtsTokenCount ?? 0}`);
+  console.log(`Total tokens: ${usageMetadata.totalTokenCount}`);
   console.log("\n---\n");
 
   console.log(responseText);
