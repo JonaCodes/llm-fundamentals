@@ -9,7 +9,7 @@
 
 ## Gemini API Setup Instructions
 
-Guide: https://ai.google.dev/gemini-api/docs/quickstart#javascript
+Guide: https://ai.google.dev/gemini-api/docs/generate-content/text-generation
 
 - You will need an API key which you can get for free here: https://aistudio.google.com/app/apikey?
 - Press the Create API Key button on the top right
@@ -17,15 +17,18 @@ Guide: https://ai.google.dev/gemini-api/docs/quickstart#javascript
 Create a `.env` file and **add the API key there**, like this:
 `GEMINI_API_KEY=your_api_key_here`
 
-You can reduce token usage (hence increase your rate limit) by disabling thinking:
+Use `gemini-3.8-flash` for generation. To reduce thinking effort and latency,
+import `ThinkingLevel` from `@google/genai` and add this to your request:
 
-```
+```js
 config: {
   thinkingConfig: {
-    thinkingBudget: 0, // Disables thinking
+    thinkingLevel: ThinkingLevel.LOW,
   },
 }
 ```
+
+This model supports low thinking, rather than disabling thinking with `thinkingBudget: 0`.
 
 ## Tasks
 

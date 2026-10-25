@@ -1,4 +1,4 @@
-import { GoogleGenAI } from "@google/genai";
+import { GoogleGenAI, ThinkingLevel } from "@google/genai";
 import dotenv from "dotenv"; // to read the .env file
 
 dotenv.config();
@@ -11,7 +11,7 @@ const askGemini = async (model, userPrompt) => {
       contents: userPrompt,
       config: {
         thinkingConfig: {
-          thinkingBudget: 0,
+          thinkingLevel: ThinkingLevel.LOW,
         },
       },
     });
@@ -24,7 +24,7 @@ const askGemini = async (model, userPrompt) => {
 };
 
 const run = async () => {
-  const model = "gemini-2.5-flash";
+  const model = "gemini-3.8-flash";
   const userPrompt = `
   Is the following a positive or negative review?
   "Yeah, this was the *best* book ever - as if."`;
